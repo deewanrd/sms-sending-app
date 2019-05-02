@@ -2,7 +2,7 @@ angular.module('smsApp')
   .controller('ContactInfoCtrl', function ($scope, $stateParams, $http) {
 
     $scope.fetchContactInfo = function () {
-      $http.get('http://localhost:8000/fetchContactInfo', {
+      $http.get(document.location.protocol + '//' + document.location.host + '/fetchContactInfo', {
         'params': { 'id': $scope.contactId }
       })
         .then((response) => {

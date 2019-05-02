@@ -4,7 +4,7 @@ angular.module('smsApp')
     $scope.messages = [];
 
     $scope.fetchMessages = function () {
-      $http.get('http://localhost:8000/fetchMessages')
+      $http.get(document.location.protocol + '//' + document.location.host + '/fetchMessages')
         .then((response) => {
           let messages = response.data;
           messages.forEach(function (message) {

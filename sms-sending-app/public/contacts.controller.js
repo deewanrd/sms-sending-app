@@ -3,7 +3,7 @@ angular.module('smsApp')
 
     $scope.contacts = [];
     $scope.fetchContacts = function () {
-      $http.get('http://localhost:8000/fetchContacts')
+      $http.get(document.location.protocol + '//' + document.location.host + '/fetchContacts')
         .then(function (response) {
           let contacts = response.data;
           Object.keys(contacts).forEach(function (key) {

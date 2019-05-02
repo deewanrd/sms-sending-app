@@ -4,7 +4,7 @@ angular.module('smsApp')
     $scope.message = "Hi. Your OTP is: ";
 
     $scope.fetchContactInfo = function () {
-      $http.get('http://localhost:8000/fetchContactInfo', {
+      $http.get(document.location.protocol + '//' + document.location.host + '/fetchContactInfo', {
         'params': { 'id': $scope.contactId }
       })
         .then((response) => {
@@ -24,7 +24,7 @@ angular.module('smsApp')
         'recipientName': recipientName
       };
       $scope.loading = true;
-      $http.post('http://localhost:8000/sendMessage', params)
+      $http.post(document.location.protocol + '//' + document.location.host + '/sendMessage', params)
         .then((result) => {
           alert('Message sent');
           $scope.loading = false;
