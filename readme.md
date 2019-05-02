@@ -23,3 +23,6 @@ Initially contacts are read from contacts.json file and loaded in the cache.
 Messages sent are stored in mongodb with dbName: sms_app and collection messages.
 In the messages collection fields are:
 recipientname, text, otp, sent_at
+
+The app is deployed on heroku. 
+It can be accessed through the link: https://sms-sending-app.herokuapp.com
