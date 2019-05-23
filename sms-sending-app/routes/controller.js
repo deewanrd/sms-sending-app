@@ -50,11 +50,11 @@ exports.fectMessages = function (req, res) {
     messages = JSON.parse(JSON.stringify(messages));
     messages.forEach(function (message) {
       message.otp = Number(message.otp);
-      message.sent_at = moment(message.sent_at).format('YYYY-MM-DD HH:mm:ss');
-    })
+      message.sent_at = moment(message.sent_at).add(330, "minutes").format('YYYY-MM-DD HH:mm:ss');
+    });
     return res.status(200).send(messages);
-  })
-}
+  });
+};
 
 exports.sendMessage = function (req, res) {
   let callback = function (error, response) {

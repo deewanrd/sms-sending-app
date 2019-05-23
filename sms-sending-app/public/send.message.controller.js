@@ -1,7 +1,12 @@
 angular.module('smsApp')
   .controller('SendMessageCtrl', function ($scope, $stateParams, $http) {
 
-    $scope.message = "Hi. Your OTP is: ";
+    function randomNumberGenerator() {
+      let otp = Math.floor(100000 + Math.random() * 900000);
+      return otp;
+    }
+
+    $scope.message = "Hi. Your OTP is: " + randomNumberGenerator();
 
     $scope.fetchContactInfo = function () {
       $http.get(document.location.protocol + '//' + document.location.host + '/fetchContactInfo', {
